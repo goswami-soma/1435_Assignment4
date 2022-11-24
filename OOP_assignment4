@@ -1,0 +1,69 @@
+#include<cstring>
+#include<iostream>
+#include<iostream>
+using namespace std;
+class Library
+{
+protected:
+    int days, hours;
+public:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    virtual void display(){
+        cout<<"Welcome to the Library!\nHappy reading\n"<<endl;
+    }
+    Library(int d){
+        days=d;
+    }
+
+    int getdays(){
+        return days;
+    }
+    int gethours(){
+        return hours;
+    }
+
+};
+class Faculty: public Library
+{
+    int h;
+public:
+    Faculty(int d, int h):Library(d){
+        hours=h;
+    }
+    friend void setid()
+    void display(){
+        cout<<"Hello Teacher.\n";
+        cout<<"You can issue a book for "<<d<<" days.\n";
+        cout<<"You are allowed here for "<<h<<" hours.\n";
+    }
+
+};
+class Student: public Library
+{
+    int h;
+public:
+    Student(int d, int h):Library(d){
+        hours=h;
+    }
+    void display(){
+        cout<<"Hello Student.\n";
+        cout<<"You can issue a book for "<<d<<" days.\n";
+        cout<<"You are allowed here for "<<h<<" hours.\n";
+    }
+
+};
+
+int main()
+{
+    Faculty T(15,18);
+    Library *p=new Student(7,10);
+    char ID;
+    cout<<"Enter you ID:\n'S' OR 'S' for Student.\n'F' OR 'f' for Faculty.\n";
+    cin>>ID;
+    switch(ID){
+        case 'F'||'f':
+            T.display();
+        case 'S'||'s':
+            p->display();
+        return 0;
+    }
+}
